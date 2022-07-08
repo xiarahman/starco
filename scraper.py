@@ -1,3 +1,4 @@
+from concurrent.futures import process
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -24,19 +25,25 @@ def find_product(url=product_url):
 
     if prod:
         print("Product Exists!")
+        product = soup.find("div", class_="et_pb_module_inner").get_text()
+        product = "Exist: "+product
+        print(product)
         stock = soup.find(
             "span", class_="woocommerce-Price-amount amount").get_text()
         print(stock)
-        send_email('Product Exists and is in stock', stock)
+        send_email(product, stock)
         # exit
     else:
         print("Product Doesn't Exist or Out of stock!")
         # exit
 
+
 # Call scrapper
 find_product()
 
 # Timed scrap with intervals
+
+
 def timed_scrapper():
     while(True):
         r = requests.get(url)
