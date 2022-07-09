@@ -8,8 +8,8 @@ baseurl = "https://starcofans.com"
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'}
 
-product_url = "https://starcofans.com/product/omega-inverter/"
-# product_url = "https://starcofans.com/product/sapphire-inverter/"
+# product_url = "https://starcofans.com/product/omega-inverter/"
+product_url = "https://starcofans.com/product/sapphire-inverter/"
 
 # k = requests.get('https://starcofans.com/product/sapphire-inverter').text
 # soup=BeautifulSoup(k,'html.parser')
